@@ -1,0 +1,15 @@
+table {
+    background-color: #ddd;
+    border: 2px solid black;
+    padding: 4px;
+}
+
+th, td {
+    font-size: 16px;
+    font-family: Calibri;
+
+}
+
+td {
+    border-bottom: 1px solid black;
+}
