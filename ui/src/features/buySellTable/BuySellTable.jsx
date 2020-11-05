@@ -1,34 +1,41 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from './BuySellTable.module.css';
-import {selectRows} from "./buySellTableSlice";
+import {loadRows, selectRows} from "./buySellTableSlice";
 import {useDispatch, useSelector} from "react-redux";
 
-export function BuySellTable() {
+export function BuySellTable(props) {
     const rows = useSelector(selectRows);
-    // const dispatch = useDispatch();
-    // const [incrementAmount, setIncrementAmount] = useState('2');
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        dispatch(loadRows(props.type))
+    }, [dispatch]);
     
     return (
         <table>
-            <tr>
-                <th colspan={4}>Buying offers</th>
-            </tr>
-            <tr>
-                <th>order</th>
-                <th>buyer</th>
-                <th>price</th>
-                <th>quantity</th>
-            </tr>
-            {rows.map( (row, index) => {
+            <thead>
+                <tr>
+                    <th colSpan={4}>{props.type === 'buy' ? 'Buying' : 'Selling'} offers</th>
+                </tr>
+                <tr>
+                    <th>order</th>
+                    <th>{props.type === 'buy' ? 'buyer' : 'seller'}</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+            {rows.map((row, index) => {
                 return (
                     <tr>
-                        <td>{index+1}</td>
+                        <td>{index + 1}</td>
                         <td>{row.node}</td>
                         <td>{row.price}</td>
                         <td>{row.quantity}</td>
                     </tr>
                 )
             })}
+            </tbody>
         </table>
     );
 }
