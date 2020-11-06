@@ -1,1 +1,1 @@
-works but functions are not reusable components
+css for spliscreen not passed over

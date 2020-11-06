@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import buySellTableReducer from '../features/buySellTable/buySellTableSlice';
+import tradeCenterReducer from '../features/TradeCenter/TradeCenterSlice';
 
 export default configureStore({
   reducer: {
-    counter:  counterReducer,
-    buySellTable: buySellTableReducer
+    tradeCenter: tradeCenterReducer
   },
 });

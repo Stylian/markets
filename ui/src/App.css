@@ -2,13 +2,3 @@
   text-align: center;
   padding: 50px;
 }
-
-.splitscreen {
-  display:flex;
-}
-.splitscreen .left {
-  flex: 1;
-}
-.splitscreen .right {
-  flex: 1;
-}

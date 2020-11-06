@@ -1,3 +1,14 @@
+
+.splitscreen {
+    display:flex;
+}
+.splitscreen .left {
+    flex: 1;
+}
+.splitscreen .right {
+    flex: 1;
+}
+
 table {
     background-color: #ddd;
     border: 2px solid black;
