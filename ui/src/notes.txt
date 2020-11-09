@@ -1,1 +1,0 @@
-css for spliscreen not passed over

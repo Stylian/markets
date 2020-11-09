@@ -53,15 +53,15 @@ export function TradeCenter() {
     }, [dispatch]);
     
     return (
-        <div className="splitscreen">
-            <div className="left">
+        <div className={styles.splitscreen}>
+            <div className={styles.left}>
                 <table>
                     <Tableheaders type={'buy'} />
                     <TableRows rows={buyingClients} />
                 </table>
             </div>
 
-            <div className="right">
+            <div className={styles.right}>
                 <table>
                     <Tableheaders type={'sell'} />
                     <TableRows rows={sellingClients} />
