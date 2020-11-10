@@ -5,3 +5,4 @@ to add
 -tests
 -npm
 -mapstruct
+- check if mvn java version updated after restart
