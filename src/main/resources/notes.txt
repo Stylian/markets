@@ -1,8 +1,8 @@
-to test
--logging
+
 
 to add
--tests
+-tests not persisting?
 -npm
 -mapstruct
 - check if mvn java version updated after restart
+- lombok

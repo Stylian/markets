@@ -12,19 +12,19 @@ public class Test {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     
-    private String name;
+    private int counter;
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public int getCounter() {
+        return counter;
     }
 
     protected Test() { }
     
-    public Test(String name) {
-        this.name = name;
+    public Test(int counter) {
+        this.counter = counter;
     }
 }

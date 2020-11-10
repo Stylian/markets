@@ -2,12 +2,17 @@ package gr.manolis.steli.markets.test;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
+/**
+ * an example api , also counts how many times it run
+ */
 @RestController
 @Transactional
 @RequestMapping("/test")
@@ -18,18 +23,20 @@ public class TestController {
     @Autowired
     private TestRepository repository;
 
-    @RequestMapping("/")
-    public String getIfItWorks() {
-        return "it works!";
-    }
-
-    @RequestMapping("/add")
-    public Test add() {
-        return repository.save(new Test("test 2"));
+    @PostMapping("/")
+    public Test addTest() {
+        log.info("addTest");
+        
+        int counter = (int) repository.count();
+        log.debug("counter: " + counter);
+        
+        Test test = new Test(counter);
+        return repository.save(test);
     }
     
-    @RequestMapping("/get")
-    public List<Test> get() {
+    @GetMapping("/")
+    public List<Test> getTests() {
+        log.info("getTests");
         return repository.findAll();
     }
 
