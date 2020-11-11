@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import styles from './TradeCenter.module.css';
 import {
     loadBuyingClients,
     selectBuyingClients,
     loadSellingClients,
     selectSellingClients
-} from "./TradeCenterSlice";
+} from "./tradeCenterSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 
