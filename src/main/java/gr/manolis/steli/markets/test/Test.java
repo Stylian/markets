@@ -1,11 +1,14 @@
 package gr.manolis.steli.markets.test;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Test {
 
     @Id
@@ -13,14 +16,6 @@ public class Test {
     private Long id;
     
     private int counter;
-
-    public Long getId() {
-        return id;
-    }
-
-    public int getCounter() {
-        return counter;
-    }
 
     protected Test() { }
     

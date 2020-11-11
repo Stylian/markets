@@ -1,5 +1,6 @@
 package gr.manolis.steli.markets.test;
 
+import lombok.extern.log4j.Log4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,10 @@ import java.util.List;
 @RestController
 @Transactional
 @RequestMapping("/test")
+@Log4j
 public class TestController {
     
-    private static final Logger log = Logger.getLogger(TestController.class);
+//    private static final Logger log = Logger.getLogger(TestController.class);
 
     @Autowired
     private TestRepository repository;
