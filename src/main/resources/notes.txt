@@ -3,5 +3,4 @@
 to add
 -tests not persisting?
 -npm
--mapstruct
-- check if mvn java version updated after restart
+
