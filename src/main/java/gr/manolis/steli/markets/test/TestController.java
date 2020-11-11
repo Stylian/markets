@@ -15,13 +15,10 @@ import java.util.List;
  * an example api , also counts how many times it run
  */
 @RestController
-@Transactional
 @RequestMapping("/test")
 @Log4j
 public class TestController {
     
-//    private static final Logger log = Logger.getLogger(TestController.class);
-
     @Autowired
     private TestRepository repository;
 

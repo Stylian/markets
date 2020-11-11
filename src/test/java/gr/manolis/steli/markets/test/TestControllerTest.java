@@ -5,14 +5,20 @@ import gr.manolis.steli.markets.DerbyTestDbConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.util.Map;
+
+import static org.assertj.core.api.BDDAssertions.then;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes =
@@ -21,18 +27,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                 DerbyTestDbConfig.class
         },
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureMockMvc
+@TestPropertySource(properties = { "management.port=0" })
 @ActiveProfiles("test")
 public class TestControllerTest {
-    
+
+    @LocalServerPort
+    private int port;
+
     @Autowired
-    private MockMvc mockMvc;
+    private TestRestTemplate testRestTemplate;
     
     @Test
-    void testAddTest() throws Exception {
-        mockMvc.perform(post("/test/")
-                .contentType("application/json"))
-                .andExpect(status().isOk());
+    void testAddTest() {
+        MultiValueMap<String, Object> parts = new LinkedMultiValueMap<String, Object>();
+        ResponseEntity<Map> entity = this.testRestTemplate
+                .postForEntity("http://localhost:" + this.port 
+                + "/test/", parts, Map.class);
+        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
     
 }

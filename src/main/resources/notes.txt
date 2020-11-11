@@ -1,6 +1,10 @@
 
 
-to add
 -tests not persisting?
+    @Transactional
+
+
 -npm
+  autobuild
+  connect
 
