@@ -2,10 +2,13 @@
 
 -tests not persisting?
     @Transactional
+  normal database also not persisting after restart
 
 
 -npm
   autobuild
   connect
 
-- send post on test
+generalize isLoaded page for multiple gets
+find out why this not working
+  {/*{tests.map(test => <p>{test}</p>)}*/}
