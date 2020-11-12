@@ -1,4 +1,22 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
+
+export const postTest = createAsyncThunk('/testPage/addTest', async () => {
+    return fetch("/test/",
+        {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            // body: this.props.match.params.seasonNum 
+        })
+        .then(res => res.json())
+        .then(
+            (result) => {
+                // state.hasRun += 1;
+            },
+            (error) => {
+            }
+        )
+})
 
 export const testPageSlice = createSlice({
     name: 'testPage',
@@ -6,16 +24,16 @@ export const testPageSlice = createSlice({
         hasRun: 0,
     },
     reducers: {
-        addTest: state => {
-            
-            console.log("run post here");
-            
-            state.hasRun += 1;
-        },
     },
+    extraReducers: {
+        [postTest.pending]: (state, action) => {
+            console.log("pending");
+        },
+        [postTest.fulfilled]: (state, action) => {
+            console.log("fulfilled");
+        }
+    }
 });
-
-export const { addTest } = testPageSlice.actions;
 
 export const selectRuns = state => state.testPage.hasRun;
 

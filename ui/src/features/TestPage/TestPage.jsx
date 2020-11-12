@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import styles from './TestPage.module.css';
 import {
-    addTest, selectRuns,
+    postTest, selectRuns,
 } from './testPageSlice';
 
 export function TestPage() {
@@ -12,7 +12,7 @@ export function TestPage() {
     return (
         <div className={styles.main}>
             <button
-                onClick={() => dispatch(addTest())}
+                onClick={() => dispatch(postTest())}
             > Test </button>
             {runningTimes}
         </div>
