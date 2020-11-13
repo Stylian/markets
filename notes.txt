@@ -1,9 +1,5 @@
 
 
--tests not persisting?
-    @Transactional
-  normal database also not persisting after restart
-
 
 -npm
   autobuild

@@ -23,7 +23,7 @@ export function TestPage() {
     return isLoaded ? (
         <div className={styles.main}>
             {/*{tests.map(test => <p>{test}</p>)}*/}
-            {tests[0].counter}
+            {/*{tests[0].counter}*/}
             <button
                 onClick={() => dispatch(postTest())}
             > Test </button>
