@@ -4,7 +4,3 @@
 -npm
   autobuild
   connect
-
-generalize isLoaded page for multiple gets
-find out why this not working
-  {/*{tests.map(test => <p>{test}</p>)}*/}

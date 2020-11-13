@@ -13,7 +13,7 @@ import java.util.List;
  * an example api , also counts how many times it run
  */
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/tests")
 @Log4j
 public class TestController {
     
@@ -35,6 +35,17 @@ public class TestController {
     public List<Test> getTests() {
         log.info("getTests");
         return repository.findAll();
+    }
+
+    @GetMapping("/something")
+    public String getSomething() {
+        log.info("getSomething");
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "Something";
     }
 
 }
