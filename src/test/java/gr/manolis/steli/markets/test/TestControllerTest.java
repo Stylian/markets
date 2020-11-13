@@ -42,7 +42,7 @@ public class TestControllerTest {
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<String, Object>();
         ResponseEntity<Map> entity = this.testRestTemplate
                 .postForEntity("http://localhost:" + this.port 
-                + "/tests/", parts, Map.class);
+                + "/api/tests/", parts, Map.class);
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
     

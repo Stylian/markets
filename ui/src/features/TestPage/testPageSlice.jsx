@@ -3,13 +3,13 @@ import axios from 'axios';
 
 
 export const getTests = createAsyncThunk('/testPage/getTests', () =>
-    axios.get("/tests/",)
+    axios.get("/api/tests/",)
         .then(response => response.data)
         .catch(error => error)
 );
 
 export const postTest = createAsyncThunk('/testPage/addTest', () => 
-    axios.post("/tests/",
+    axios.post("/api/tests/",
         {
         })
         .then(response => response.data)

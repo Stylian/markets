@@ -1,6 +1,16 @@
 
+chart js
+
+goods requests generator for developing and testing, requests mocker
+
+price generator
+transactions saving table
+past prices table for multiple goods
+
 
 
 -npm
-  autobuild
-  connect
+  autobuild not working for /test
+
+-generalize tests ?
+  basic app test
