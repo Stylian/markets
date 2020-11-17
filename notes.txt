@@ -9,8 +9,6 @@ past prices table for multiple goods
 
 
 
--npm
-  autobuild not working for /test
 
 -generalize tests ?
   basic app test
