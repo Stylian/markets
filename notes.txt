@@ -1,4 +1,25 @@
 
+
+not entirely happy with design
+- need to move to persistence ( might help with design )
+- OffersTable , not happy with that
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 chart js
 
 goods requests generator for developing and testing, requests mocker
@@ -6,9 +27,3 @@ goods requests generator for developing and testing, requests mocker
 price generator
 transactions saving table
 past prices table for multiple goods
-
-
-
-
--generalize tests ?
-  basic app test
