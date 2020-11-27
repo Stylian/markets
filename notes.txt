@@ -2,7 +2,7 @@
 
 not entirely happy with design
 - need to move to persistence ( might help with design )
-- OffersTable , not happy with that
+
 
 
 
@@ -28,48 +28,3 @@ price generator
 transactions saving table
 past prices table for multiple goods
 
-
-
-    TradeClient venice = new TradeClient("Venice");
-    TradeClient tunis = new TradeClient("Tunis");
-    TradeClient lisbon = new TradeClient("Lisbon");
-    TradeClient genoa = new TradeClient("Genoa");
-
-
-    Offer veniceOffer = new Offer(
-            Good.TIMBER,
-            venice,
-            OfferType.BUY,
-            28.3,
-            2000);
-    Offer tunisOffer = new Offer(
-            Good.TIMBER,
-            tunis,
-            OfferType.BUY,
-            27.5,
-            300);
-    Offer lisbonOffer = new Offer(
-            Good.TIMBER,
-            lisbon,
-            OfferType.BUY,
-            23,
-            600);
-    Offer genoaOffer = new Offer(
-            Good.TIMBER,
-            genoa,
-            OfferType.BUY,
-            24.8,
-            400);
-            
-                Offer marseilleOffer = new Offer(
-                        Good.TIMBER,
-                        marseille,
-                        OfferType.BUY,
-                        27.6,
-                        1500);
-                Offer londonSilkOffer = new Offer(
-                        Good.SILK,
-                        londonSilk,
-                        OfferType.BUY,
-                        27.6,
-                        1500);

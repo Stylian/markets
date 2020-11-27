@@ -19,7 +19,7 @@ public class TradeClient {
     private String name;
     
     @ToString.Exclude
-    @OneToMany( mappedBy = "stockpile")
+    @OneToMany
     private Map<Good, Stockpile> stockpiles;
 
     public TradeClient(String name) {

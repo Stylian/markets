@@ -1,6 +1,7 @@
 package gr.manolis.steli.markets.trade_center;
 
 import gr.manolis.steli.markets.trade_center.good.Good;
+import gr.manolis.steli.markets.trade_center.offer.Offer;
 import lombok.Data;
 import lombok.ToString;
 
@@ -31,4 +32,7 @@ public class TradeCenter {
         return tradeTables.get(good);
     }
     
+    public void addOffer(Offer offer) {
+        tradeTables.get(offer.getGood()).addOffer(offer);
+    }
 }
