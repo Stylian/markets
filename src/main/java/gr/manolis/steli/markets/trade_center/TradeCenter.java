@@ -1,13 +1,10 @@
 package gr.manolis.steli.markets.trade_center;
 
 import gr.manolis.steli.markets.trade_center.good.Good;
-import gr.manolis.steli.markets.trade_center.node.stockpile.Stockpile;
-import gr.manolis.steli.markets.trade_center.offer.Offer;
 import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,28 +18,17 @@ public class TradeCenter {
 
     @ToString.Exclude
     @OneToMany
-    private Map<Good, OffersTable> buyingOffers;
-
-    @ToString.Exclude
-    @OneToMany
-    private Map<Good, OffersTable> sellingOffers;
+    private Map<Good, TradeTable> tradeTables;
 
     public TradeCenter() {
-        buyingOffers = new HashMap<>();
-        sellingOffers = new HashMap<>();
+        tradeTables = new HashMap<>();
         for (Good good : Good.values()) {
-            buyingOffers.put(good, new OffersTable());
-            sellingOffers.put(good, new OffersTable());
+            tradeTables.put(good, new TradeTable(good));
         }
     }
 
-    public void addBuyingOffer(Offer offer) {
-        buyingOffers.get(offer.getStockpile().getGood()).addOffer(offer);
+    public TradeTable getTradeTableForGood(Good good) {
+        return tradeTables.get(good);
     }
-
-    public void addSellingOffer(Offer offer) {
-        sellingOffers.get(offer.getStockpile().getGood()).addOffer(offer);
-    }
-
-
+    
 }

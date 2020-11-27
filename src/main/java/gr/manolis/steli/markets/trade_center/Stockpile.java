@@ -1,7 +1,6 @@
-package gr.manolis.steli.markets.trade_center.node.stockpile;
+package gr.manolis.steli.markets.trade_center;
 
 import gr.manolis.steli.markets.trade_center.good.Good;
-import gr.manolis.steli.markets.trade_center.node.Node;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,14 +14,14 @@ public class Stockpile {
     private Long id;
 
     @ManyToOne
-    private Node node;
-    
+    private TradeClient tradeClient;
+
     private Good good;
-    
+
     private double amount;
 
-    public Stockpile(Node node, Good good, double amount) {
-        this.node = node;
+    public Stockpile(TradeClient tradeClient, Good good, double amount) {
+        this.tradeClient = tradeClient;
         this.good = good;
         this.amount = amount;
     }

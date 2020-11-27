@@ -1,7 +1,6 @@
-package gr.manolis.steli.markets.trade_center.node;
+package gr.manolis.steli.markets.trade_center;
 
 import gr.manolis.steli.markets.trade_center.good.Good;
-import gr.manolis.steli.markets.trade_center.node.stockpile.Stockpile;
 import lombok.Data;
 import lombok.ToString;
 
@@ -11,19 +10,19 @@ import java.util.Map;
 
 @Entity
 @Data
-public class Node {
-
+public class TradeClient {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     private String name;
-
+    
     @ToString.Exclude
     @OneToMany( mappedBy = "stockpile")
     private Map<Good, Stockpile> stockpiles;
 
-    public Node(String name) {
+    public TradeClient(String name) {
         this.name = name;
 
         stockpiles = new HashMap<>();
@@ -35,5 +34,5 @@ public class Node {
     public Stockpile getStockpileByGood(Good good) {
         return stockpiles.get(good);
     }
-
+    
 }
