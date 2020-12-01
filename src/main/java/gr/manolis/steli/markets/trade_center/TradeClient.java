@@ -1,6 +1,7 @@
 package gr.manolis.steli.markets.trade_center;
 
-import gr.manolis.steli.markets.trade_center.good.Good;
+import gr.manolis.steli.markets.stockpile.Stockpile;
+import gr.manolis.steli.markets.good.Good;
 import lombok.Data;
 import lombok.ToString;
 
@@ -14,7 +15,7 @@ public class TradeClient {
     
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     private String name;
     

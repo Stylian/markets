@@ -1,6 +1,7 @@
-package gr.manolis.steli.markets.trade_center;
+package gr.manolis.steli.markets.stockpile;
 
-import gr.manolis.steli.markets.trade_center.good.Good;
+import gr.manolis.steli.markets.good.Good;
+import gr.manolis.steli.markets.trade_center.TradeClient;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ public class Stockpile {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     @ManyToOne
     private TradeClient tradeClient;

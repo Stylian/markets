@@ -1,8 +1,9 @@
 package gr.manolis.steli.markets.trade_center;
 
-import gr.manolis.steli.markets.trade_center.good.Good;
-import gr.manolis.steli.markets.trade_center.offer.Offer;
-import gr.manolis.steli.markets.trade_center.offer.OfferType;
+import gr.manolis.steli.markets.good.Good;
+import gr.manolis.steli.markets.offer.Offer;
+import gr.manolis.steli.markets.offer.OfferType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/trade_center")
 public class TradeCenterController {
 
+    @Autowired
+    private TradeCenterMapper tradeCenterMapper;
+    
 //temp method
     @GetMapping("/")
-    public TradeCenter getTradeCenter() {
+    public TradeCenterDTO getTradeCenter() {
 
 
         TradeClient venice = new TradeClient("Venice");
@@ -55,7 +59,7 @@ public class TradeCenterController {
         
         http://localhost:8080/api/trade_center/
         // needs dto to avoid loops
-        return tradeCenter;
+        return tradeCenterMapper.toDTO(tradeCenter);
     }
     
     

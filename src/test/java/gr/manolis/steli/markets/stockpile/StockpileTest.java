@@ -1,6 +1,8 @@
-package gr.manolis.steli.markets.trade_center;
+package gr.manolis.steli.markets.stockpile;
 
-import gr.manolis.steli.markets.trade_center.good.Good;
+import gr.manolis.steli.markets.stockpile.Stockpile;
+import gr.manolis.steli.markets.good.Good;
+import gr.manolis.steli.markets.trade_center.TradeClient;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

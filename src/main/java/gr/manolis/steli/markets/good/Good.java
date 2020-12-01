@@ -1,4 +1,4 @@
-package gr.manolis.steli.markets.trade_center.good;
+package gr.manolis.steli.markets.good;
 
 public enum Good {
     

@@ -1,7 +1,8 @@
 package gr.manolis.steli.markets.trade_center;
 
-import gr.manolis.steli.markets.trade_center.good.Good;
-import gr.manolis.steli.markets.trade_center.offer.Offer;
+import gr.manolis.steli.markets.good.Good;
+import gr.manolis.steli.markets.offer.Offer;
+import gr.manolis.steli.markets.trade_table.TradeTable;
 import lombok.Data;
 import lombok.ToString;
 
@@ -15,7 +16,7 @@ public class TradeCenter {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     @ToString.Exclude
     @OneToMany

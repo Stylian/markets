@@ -1,7 +1,7 @@
-package gr.manolis.steli.markets.trade_center.offer;
+package gr.manolis.steli.markets.offer;
 
 import gr.manolis.steli.markets.trade_center.TradeClient;
-import gr.manolis.steli.markets.trade_center.good.Good;
+import gr.manolis.steli.markets.good.Good;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,7 +12,7 @@ public class Offer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     
     private OfferType type;
 
