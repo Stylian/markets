@@ -16,6 +16,7 @@ public class TestMapperTest {
         
         assertThat(testDTO).isNotNull();
         assertThat(testDTO.getText()).isEqualTo("test " + test.getCounter());
+        assertThat(testDTO.getValue()).isEqualTo(42);
     }
     
 }

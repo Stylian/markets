@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class TestDTO {
     
-    String text;
-    
+    private String text;
+    private int value;
 }

@@ -6,14 +6,14 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public abstract class TestMapper {
+public interface TestMapper {
 
-    public static TestMapper INSTANCE = Mappers.getMapper(TestMapper.class);
+    TestMapper INSTANCE = Mappers.getMapper(TestMapper.class);
     
-    abstract TestDTO toDTO(Test test);
+    TestDTO toDTO(Test test);
     
     @AfterMapping
-    void afterMapping(@MappingTarget TestDTO testDTO, Test test) {
+    default void afterMapping(@MappingTarget TestDTO testDTO, Test test) {
         testDTO.setText("test " + test.getCounter());
     }
 }

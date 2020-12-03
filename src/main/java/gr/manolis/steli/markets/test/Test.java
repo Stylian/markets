@@ -16,6 +16,7 @@ public class Test {
     private Long id;
     
     private int counter;
+    private int value = 42;
 
     protected Test() { }
     
