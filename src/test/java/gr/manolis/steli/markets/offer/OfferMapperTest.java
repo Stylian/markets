@@ -1,16 +1,22 @@
 package gr.manolis.steli.markets.offer;
 
-import gr.manolis.steli.markets.trade_center.TradeClient;
 import gr.manolis.steli.markets.good.Good;
+import gr.manolis.steli.markets.trade_center.TradeClient;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SpringBootTest
 public class OfferMapperTest {
 
+    @Autowired
+    private OfferMapper offerMapper;
+    
     @Test
     public void shouldMapToDTO() {
         
@@ -24,7 +30,7 @@ public class OfferMapperTest {
                 300);
         offer.setId(-1L);
 
-        OfferDTO offerDTO = OfferMapper.INSTANCE.toDTO(offer);
+        OfferDTO offerDTO = offerMapper.toDTO(offer);
 
         assertThat(offerDTO).isNotNull();
         assertThat(offerDTO).hasNoNullFieldsOrProperties();
@@ -46,7 +52,7 @@ public class OfferMapperTest {
         List<Offer> offers = new ArrayList<>();
         offers.add(offer);
 
-        List<OfferDTO> offersDTO = OfferMapper.INSTANCE.toDTO(offers);
+        List<OfferDTO> offersDTO = offerMapper.toDTO(offers);
 
         OfferDTO offerDTO = offersDTO.get(0);
         

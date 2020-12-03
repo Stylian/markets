@@ -30,7 +30,7 @@ public class TradeTable {
     public TradeTable(Good good) {
         this.good = good;
     }
-    
+
     @SneakyThrows
     public void addOffer(Offer offer) {
         

@@ -5,11 +5,17 @@ import gr.manolis.steli.markets.good.Good;
 import gr.manolis.steli.markets.offer.Offer;
 import gr.manolis.steli.markets.offer.OfferType;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SpringBootTest
 public class TradeTableMapperTest {
 
+    @Autowired
+    private TradeTableMapper tradeTableMapper;
+    
     @Test
     public void shouldMapToDTO() {
         
@@ -26,8 +32,7 @@ public class TradeTableMapperTest {
         tradeTable.addOffer(marseilleOffer);
         tradeTable.setId(-1L);
         
-        
-        TradeTableDTO tradeTableDTO = TradeTableMapper.INSTANCE.toDTO(tradeTable);
+        TradeTableDTO tradeTableDTO = tradeTableMapper.toDTO(tradeTable);
 
         assertThat(tradeTableDTO).isNotNull();
         assertThat(tradeTableDTO).hasNoNullFieldsOrProperties();

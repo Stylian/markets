@@ -1,12 +1,10 @@
 package gr.manolis.steli.markets.trade_center;
 
+import gr.manolis.steli.markets.trade_table.TradeTableMapper;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = TradeTableMapper.class)
 public interface TradeCenterMapper {
-
-    TradeCenterMapper INSTANCE = Mappers.getMapper(TradeCenterMapper.class);
 
     TradeCenterDTO toDTO(TradeCenter tradeCenter);
 }
