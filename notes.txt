@@ -1,5 +1,6 @@
 
 doing trade center page
+- need to modularize
 
 chart js
 
