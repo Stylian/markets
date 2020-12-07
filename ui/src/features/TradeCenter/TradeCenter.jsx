@@ -37,32 +37,47 @@ const TableRows = (props) => {
     );
 }
 
+const TradeTable = (props) => {
+    return (
+        <div>
+            <div>{props.tradeTable.good}</div>
+            <div className={styles.splitscreen}>
+                <div className={styles.left}>
+                    <table>
+                        <Tableheaders type={'buy'}/>
+                        <TableRows rows={props.tradeTable.buyingOffers}/>
+                    </table>
+                </div>
+
+                <div className={styles.right}>
+                    <table>
+                        <Tableheaders type={'sell'}/>
+                        <TableRows rows={props.tradeTable.sellingOffers}/>
+                    </table>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export function TradeCenter() {
     const dispatch = useDispatch();
     const isLoaded = useSelector(state => state.tradeCenter.isLoaded);
     const tradeCenter = useSelector(state => state.tradeCenter.trade_center_obj);
 
-    useEffect( () => {
+    useEffect(() => {
         dispatch(loadTradeCenter());
     }, [dispatch]);
-    
-    let timber = isLoaded? tradeCenter.tradeTables['TIMBER'] : null;
-    
-    return isLoaded ? (
-        <div className={styles.splitscreen}>
-            <div className={styles.left}>
-                <table>
-                    <Tableheaders type={'buy'} />
-                    <TableRows rows={timber.buyingOffers} />
-                </table>
-            </div>
 
-            <div className={styles.right}>
-                <table>
-                    <Tableheaders type={'sell'} />
-                    <TableRows rows={timber.sellingOffers} />
-                </table>
-            </div>
+    return isLoaded ? (
+        <div>
+            {Object.keys(tradeCenter.tradeTables).map((good) => {
+                return (
+                    <div>
+                        <TradeTable tradeTable={tradeCenter.tradeTables[good]}/>
+                    </div>
+                )
+            })}
         </div>
     ) : (null);
 }

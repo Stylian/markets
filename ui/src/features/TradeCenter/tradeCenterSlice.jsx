@@ -14,6 +14,7 @@ export const tradeCenterSlice = createSlice({
     initialState: {
         trade_center_obj: null,
         isLoaded: false,
+        activeTradeTable: null,
     },
     reducers: {
     },

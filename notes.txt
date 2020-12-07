@@ -1,10 +1,7 @@
 
-doing trade center page
-- need to modularize
+need front end framework
 
 chart js
-
-goods requests generator for developing and testing, requests mocker
 
 price generator
 transactions saving table
