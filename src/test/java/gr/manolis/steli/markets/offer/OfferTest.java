@@ -1,6 +1,6 @@
 package gr.manolis.steli.markets.offer;
 
-import gr.manolis.steli.markets.trade_center.TradeClient;
+import gr.manolis.steli.markets.trade_client.TradeClient;
 import gr.manolis.steli.markets.good.Good;
 import org.junit.jupiter.api.Test;
 

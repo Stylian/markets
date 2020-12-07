@@ -1,7 +1,7 @@
 package gr.manolis.steli.markets.offer;
 
 import gr.manolis.steli.markets.good.Good;
-import gr.manolis.steli.markets.trade_center.TradeClient;
+import gr.manolis.steli.markets.trade_client.TradeClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

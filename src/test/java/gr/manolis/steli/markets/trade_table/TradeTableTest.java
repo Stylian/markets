@@ -1,7 +1,7 @@
 package gr.manolis.steli.markets.trade_table;
 
 import gr.manolis.steli.markets.DevelopmentException;
-import gr.manolis.steli.markets.trade_center.TradeClient;
+import gr.manolis.steli.markets.trade_client.TradeClient;
 import gr.manolis.steli.markets.good.Good;
 import gr.manolis.steli.markets.offer.Offer;
 import gr.manolis.steli.markets.offer.OfferType;

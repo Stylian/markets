@@ -1,4 +1,4 @@
-package gr.manolis.steli.markets.trade_center;
+package gr.manolis.steli.markets.trade_client;
 
 import gr.manolis.steli.markets.stockpile.Stockpile;
 import gr.manolis.steli.markets.good.Good;

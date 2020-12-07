@@ -3,6 +3,7 @@ package gr.manolis.steli.markets.trade_center;
 import gr.manolis.steli.markets.good.Good;
 import gr.manolis.steli.markets.offer.Offer;
 import gr.manolis.steli.markets.offer.OfferType;
+import gr.manolis.steli.markets.trade_client.TradeClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
