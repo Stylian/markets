@@ -1,6 +1,9 @@
 
-todo objects in typescript branch 
+- should props be any ?
 
+then merge
+-remove logos and other noise
+- use styles
 need front end framework
 
 chart js

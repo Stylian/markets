@@ -1,11 +1,9 @@
 
-interface assic {
-    [key: string]: TradeTableObj;
-}
-
 export type TradeCenterObj = {
     id: number;
-    tradeTables: assic;
+    tradeTables: {
+        [key: string]: TradeTableObj;
+    };
 }
 
 export type TradeTableObj = {
@@ -19,10 +17,12 @@ export type OfferObj = {
     id: number;
     type: string;
     good: string;
-    client: {
-        id: number;
-        name: string;
-    }
+    client: TradeClientObj;
     price: number;
     quantity: number;
+}
+
+export type TradeClientObj = {
+    id: number;
+    name: string;
 }
