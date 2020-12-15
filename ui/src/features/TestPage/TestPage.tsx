@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import styles from './TestPage.module.css';
+import {addTest, loadTests} from "./TestPageScripts";
 
 type TestPageProps = {
     
@@ -27,55 +28,11 @@ export class TestPage extends Component<TestPageProps, TestPageState> {
     }
 
     componentDidMount() {
-        fetch("/api/tests/")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState(state => {
-                        return {
-                            ...state,
-                            isLoaded: true,
-                            tests: result,
-                        }
-                    });
-                },
-                (error) => {
-                    this.setState(state => {
-                        return {
-                            ...state,
-                            isLoaded: false,
-                            error
-                        }
-                    });
-                }
-            );
+        loadTests(this);
     }
 
     postTest = (event: any) => {
-        fetch("/api/tests/", {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'}
-        })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState(state => {
-                        return {
-                            ...state,
-                            tests: [...state.tests, result],
-                        }
-                    });
-                },
-                (error) => {
-                    this.setState(state => {
-                        return {
-                            ...state,
-                            isLoaded: false,
-                            error
-                        }
-                    });
-                }
-            );
+        addTest(this);
     }
     
     render() {
