@@ -1,10 +1,7 @@
 
-- should props be any ?
-
-then merge
--remove logos and other noise
 - use styles
 need front end framework
+more research needed here
 
 chart js
 
