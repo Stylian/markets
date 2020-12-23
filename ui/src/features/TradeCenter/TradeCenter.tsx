@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import styles from "./TradeCenter.module.css";
-import {loadTradeCenter} from "./TradeCenterScript";
+import {loadTradeCenter} from "./scripts";
 import {TradeTable} from "./TradeTable";
-import {TradeCenterObj} from "./TradeCenterTypes";
+import {TradeCenterObj} from "./types";
+import {Tab, Tabs} from "react-bootstrap";
 
 type TradeCenterState = {
     isLoaded: boolean;
@@ -30,15 +30,15 @@ export class TradeCenter extends Component<any, TradeCenterState> {
     
     render() {
         return this.state.isLoaded ? (
-            <div>
+            <Tabs defaultActiveKey={Object.keys(this.state.tradeCenterObj.tradeTables)[1]}>
                 {Object.keys(this.state.tradeCenterObj.tradeTables).map((good: string) => {
                     return (
-                        <div>
+                        <Tab eventKey={good} key={good} title={good}>
                             <TradeTable tradeTable={this.state.tradeCenterObj.tradeTables[good]}/>
-                        </div>
+                        </Tab>
                     )
                 })}
-            </div>
+            </Tabs>
         ) : (null);
     }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import {TestPage} from "./features/TestPage/TestPage";
 import {TradeCenter} from "./features/TradeCenter/TradeCenter";

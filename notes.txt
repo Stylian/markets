@@ -1,7 +1,5 @@
 
-- use styles
-need front end framework
-more research needed here
+fix eslint error with bootstrap. ignore probably
 
 chart js
 

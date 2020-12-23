@@ -1,4 +1,3 @@
-import styles from "./TradeCenter.module.css";
 
 export const TableHeaders = (props: any) => {
     let type = props.type;

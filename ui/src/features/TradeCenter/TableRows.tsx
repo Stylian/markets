@@ -1,5 +1,4 @@
-import styles from "./TradeCenter.module.css";
-import {OfferObj} from "./TradeCenterTypes";
+import {OfferObj} from "./types";
 
 export const TableRows = (props: any) => {
     let rows = props.rows;
@@ -7,7 +6,7 @@ export const TableRows = (props: any) => {
         <tbody>
         {rows.map((row: OfferObj, index: number) => {
             return (
-                <tr>
+                <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{row.client.name}</td>
                     <td>{row.price}</td>
