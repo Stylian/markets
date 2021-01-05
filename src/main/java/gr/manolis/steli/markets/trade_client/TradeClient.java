@@ -32,6 +32,8 @@ public class TradeClient {
         }
     }
 
+    public TradeClient() { }
+
     public Stockpile getStockpileByGood(Good good) {
         return stockpiles.get(good);
     }

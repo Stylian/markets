@@ -32,4 +32,5 @@ public class Offer {
         this.quantity = quantity;
     }
 
+    public Offer() {    }
 }

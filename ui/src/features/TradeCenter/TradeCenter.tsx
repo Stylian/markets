@@ -30,7 +30,7 @@ export class TradeCenter extends Component<any, TradeCenterState> {
     
     render() {
         return this.state.isLoaded ? (
-            <Tabs defaultActiveKey={Object.keys(this.state.tradeCenterObj.tradeTables)[1]}>
+            <Tabs defaultActiveKey={Object.keys(this.state.tradeCenterObj.tradeTables)[0]}>
                 {Object.keys(this.state.tradeCenterObj.tradeTables).map((good: string) => {
                     return (
                         <Tab eventKey={good} key={good} title={good}>

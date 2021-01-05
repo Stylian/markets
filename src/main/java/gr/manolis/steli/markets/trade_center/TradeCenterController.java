@@ -4,6 +4,7 @@ import gr.manolis.steli.markets.good.Good;
 import gr.manolis.steli.markets.offer.Offer;
 import gr.manolis.steli.markets.offer.OfferType;
 import gr.manolis.steli.markets.trade_client.TradeClient;
+import gr.manolis.steli.markets.trade_client.TradeClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,9 @@ public class TradeCenterController {
 
     @Autowired
     private TradeCenterMapper tradeCenterMapper;
+
+    @Autowired
+    public TradeClientRepository tradeClientRepository;
     
 //temp method
     @GetMapping("/")
@@ -26,6 +30,11 @@ public class TradeCenterController {
         TradeClient lisbon = new TradeClient("Lisbon");
         TradeClient genoa = new TradeClient("Genoa");
 
+        tradeClientRepository.save(venice);
+        tradeClientRepository.save(tunis);
+        tradeClientRepository.save(lisbon);
+        tradeClientRepository.save(genoa);
+        
 
         Offer veniceOffer = new Offer(
                 Good.TIMBER,
