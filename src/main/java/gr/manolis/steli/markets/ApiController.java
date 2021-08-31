@@ -25,7 +25,7 @@ public class ApiController {
         Stock stock = new Stock();
         
         String apiHost = "apidojo-yahoo-finance-v1.p.rapidapi.com";
-        String apiKey = "e786518fa5mshb3523f0c5b920ccp1cef98jsnde6590e82b86";
+        String apiKey = "";
         
         String url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary";
 
